@@ -1,6 +1,5 @@
 ---
-- hosts: all
-  become: yes
+- hosts: localhost
   user: pi
 
   tasks:
@@ -112,9 +111,6 @@
       with_items:
         - 00-get_sigfox_modem_id.cpp
         - 01-send_sigfox_dummy_data.cpp
-        - 02-light-leds.cpp
-        - 03-print-luminance.cpp
-        - 04-print-temperature-and-humidity.cpp
-        - 05-detect-button-push.cpp
-        - 06-send-sigfox-uplink.cpp
-        - 07-send-sigfox-bidir.cpp
+        - 02-print-temperature-and-humidity.cpp
+        - 03-send-sigfox-uplink.cpp
+        - 04-send-sigfox-bidir.cpp
