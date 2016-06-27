@@ -4,7 +4,7 @@
 #include "SeeedDHT.h"
 
 //////////////////////////////////////////////
-#define DHT_PIN 8
+#define DHT_PIN  2
 #define DHT_TYPE 22
 #define DHT_COUNT 16
 DHT dht(DHT_PIN, DHT_TYPE, DHT_COUNT);
@@ -27,11 +27,13 @@ float FmultiMap(float val, float * _in, float * _out, uint8_t size) {
 
 void loop() {
   	float h = dht.TemperatureHumidityRead(DHT_PIN, 'H');
-  	float t = dht.TemperatureHumidityRead(DHT_PIN, 'T');
+	float t = dht.TemperatureHumidityRead(DHT_PIN, 'T');
+        
 
-	printf("***  Measures   ***\n");
+    printf("***  Measures   ***\n");
     printf("Humidity : %f %\n", h);
     printf("Temperature : %f°C\n", t);
+  
 
     delay(5000);
 }
